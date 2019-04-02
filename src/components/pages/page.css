@@ -1,0 +1,14 @@
+.top-animation {
+    animation-duration: 0.7s;
+    animation-name: top;
+}
+
+@keyframes top {
+    from {
+        margin-top: -200px;
+        opacity: 0;
+    } to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}

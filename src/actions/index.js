@@ -1,6 +1,6 @@
 import { loadingFunc, about_me_change_action,
     addNew, newAdd_action, changeMyInfo, deleteProduct,
-    deleteCardBlock, deleteFullCards } from './actions';
+    deleteCardBlock, deleteFullCards, buyProduct, addProduct } from './actions';
 
 export {
     loadingFunc,
@@ -10,5 +10,7 @@ export {
     deleteProduct,
     deleteCardBlock,
     deleteFullCards,
+    buyProduct,
+    addProduct,
     about_me_change_action
 };

@@ -3,7 +3,7 @@ import React from 'react';
 
 class Orders extends React.Component {
     render() {
-        const { products, deleteProduct } = this.props;
+        const { products, deleteProduct, stateDisplay } = this.props;
         return (
             <div className="row">
                 {
@@ -34,7 +34,10 @@ class Orders extends React.Component {
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
                                                 </div>
-                                                <button className="btn btn-primary">Купить</button>
+                                                <button onClick={() => {
+                                                    this.props.buyProduct(product)
+                                                    stateDisplay();
+                                                }} className="btn btn-primary">Купить</button>
                                             </div>
                                             <div className="col-auto">
                                                 <div className="product-price-tag price-block">

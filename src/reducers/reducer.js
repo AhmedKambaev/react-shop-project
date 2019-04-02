@@ -125,6 +125,45 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 card_blocks: []
             };
+        case 'BUY_PROJECT':
+            const objProduct = action.payload;
+            const findIdxObjCard = state.card_blocks.find((el) => el.id === objProduct.id);
+            let newObjProductCard = {};
+            if(!findIdxObjCard) {
+                 newObjProductCard = {
+                    id: objProduct.id,
+                    image: objProduct.image,
+                    title: objProduct.title,
+                    time: new Date().getHours() + ':' + new Date().getMinutes(),
+                    total: `$${objProduct.price}`
+                };
+                 return {
+                    ...state,
+                    card_blocks: [
+                        ...state.card_blocks,
+                        newObjProductCard
+                    ]
+                 };
+            } else {
+                return state;
+            }
+        case 'ADD_PRODUCT':
+            const {title, image, price} = action.payload;
+            const newObjProduct = {
+                id: idProducts,
+                title,
+                image,
+                price
+            };
+            idProducts++;
+            return {
+                ...state,
+                products: [
+                    ...state.products,
+                    newObjProduct
+                ]
+            };
+
         default:
             return state;
     }

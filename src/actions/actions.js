@@ -53,13 +53,29 @@ const deleteFullCards = () => {
     }
 };
 
+const buyProduct = (obj) => {
+    return {
+        type: 'BUY_PROJECT',
+        payload: obj
+    }
+};
+
+const addProduct = (obj) => {
+    return {
+        type: 'ADD_PRODUCT',
+        payload: obj
+    }
+};
+
 export {
     loadingFunc,
     addNew,
+    addProduct,
     deleteProduct,
     newAdd_action,
     changeMyInfo,
     deleteCardBlock,
     deleteFullCards,
+    buyProduct,
     about_me_change_action
 }
